@@ -4,9 +4,9 @@ const wildcard = require('wildcard')
 
 const CONFIG_FILENAME = 'pr-labeler.yml'
 const defaults = {
-  feature: ['feature/*', 'feat/*'],
-  fix: 'fix/*',
-  chore: 'chore/*'
+//  feature: ['feature/*', 'feat/*'],
+//  fix: 'fix/*',
+//  chore: 'chore/*'
 }
 
 Toolkit.run(
