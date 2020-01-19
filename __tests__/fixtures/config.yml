@@ -1,0 +1,4 @@
+'🎉 feature': ['feature/*', 'feat/*']
+fix: fix/*
+chore: chore/*
+release: release/*
