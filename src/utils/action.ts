@@ -16,5 +16,11 @@ export const action = async(logger: Logger, octokit: GitHub, context: Context): 
 			number: context.payload.pull_request?.number ?? 0,
 			labels: labelsToAdd,
 		});
+
+		logger.startProcess('Added labels: ');
+		console.log(labelsToAdd);
+	} else {
+		logger.info('There are no labels to add.');
 	}
+	logger.endProcess();
 };
