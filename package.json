@@ -1,26 +1,37 @@
 {
   "name": "pr-labeler-action",
+  "version": "3.0.0",
   "private": true,
-  "main": "index.js",
+  "main": "lib/main.js",
   "scripts": {
-    "start": "node ./index.js",
-    "build": "ncc build src/index.ts -o dist",
-    "test": "jest"
+    "build": "tsc",
+    "test": "yarn lint && yarn cover",
+    "lint": "eslint 'src/**/*.ts' '__tests__/**/*.ts'",
+    "lint:fix": "eslint --fix 'src/**/*.ts' '__tests__/**/*.ts'",
+    "cover": "jest --coverage",
+    "update": "ncu -u && yarn install && yarn upgrade && yarn audit"
   },
   "dependencies": {
-    "@actions/core": "^1.2.0",
-    "@actions/github": "^1.1.0",
-    "matcher": "^2.0.0"
+    "@actions/core": "^1.2.1",
+    "@actions/github": "^2.0.1",
+    "@technote-space/filter-github-action": "^0.1.15",
+    "@technote-space/github-action-config-helper": "^0.0.15",
+    "@technote-space/github-action-helper": "^0.7.3",
+    "matcher": "^2.1.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.20",
+    "@technote-space/github-action-test-helper": "^0.1.2",
+    "@types/jest": "^24.9.0",
     "@types/js-yaml": "^3.12.1",
-    "@types/node": "^12.11.7",
-    "@zeit/ncc": "^0.20.5",
+    "@types/node": "^13.1.8",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
     "jest": "^24.9.0",
+    "jest-circus": "^24.9.0",
     "js-yaml": "^3.13.1",
-    "nock": "^11.6.0",
-    "ts-jest": "^24.1.0",
-    "typescript": "^3.6.4"
+    "nock": "^11.7.2",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.7.5"
   }
 }

@@ -5,6 +5,7 @@ inputs:
   configuration-path:
     description: 'The path for the label configurations'
     default: '.github/pr-labeler.yml'
+    required: true
 branding:
   icon: 'tag'
   color: 'white'

@@ -1,4 +1,4 @@
-'🎉 feature': ['feature/*', 'feat/*']
-fix: fix/*
-chore: chore/*
-release: release/*
+config-feature': ['feature/*', 'feat/*']
+config-fix: fix/*
+config-chore: chore/*
+config-release: release/*

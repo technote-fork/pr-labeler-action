@@ -1,6 +1,9 @@
 # PR Labeler
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
+[![CI Status](https://github.com/technote-fork/pr-labeler-action/workflows/CI/badge.svg)](https://github.com/technote-fork/pr-labeler-action/actions)
+[![codecov](https://codecov.io/gh/technote-fork/pr-labeler-action/branch/master/graph/badge.svg)](https://codecov.io/gh/technote-fork/pr-labeler-action)
+[![CodeFactor](https://www.codefactor.io/repository/github/technote-fork/pr-labeler-action/badge)](https://www.codefactor.io/repository/github/technote-fork/pr-labeler-action)
 
 A GitHub Action that automatically applies labels to your PRs based on branch name patterns like `feature/*` or `fix/*`.
 Can be used in combination with [Release Drafter](https://github.com/toolmantim/release-drafter) to automatically [categorize pull requests](https://github.com/toolmantim/release-drafter#categorize-pull-requests).
