@@ -8,8 +8,17 @@
 A GitHub Action that automatically applies labels to your PRs based on branch name patterns like `feature/*` or `fix/*`.
 Can be used in combination with [Release Drafter](https://github.com/toolmantim/release-drafter) to automatically [categorize pull requests](https://github.com/toolmantim/release-drafter#categorize-pull-requests).
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Usage](#usage)
+- [Configuration](#configuration)
+  - [Wildcard branches in configuration](#wildcard-branches-in-configuration)
+  - [Default configuration](#default-configuration)
+- [Contributors ✨](#contributors-)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Usage
 
