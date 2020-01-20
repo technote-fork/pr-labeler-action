@@ -381,10 +381,10 @@
     "@actions/github" "^2.0.1"
     js-yaml "^3.13.1"
 
-"@technote-space/github-action-helper@^0.7.3":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/@technote-space/github-action-helper/-/github-action-helper-0.7.3.tgz#95024a311aad90b27dfa03a41e72f3338aec92dc"
-  integrity sha512-Ow4hyZwUt5ehqwJ3atwiLKpUwZohmzNcqWN70QWRaA+xrW6OPE2BTkPwVaqbz7HpfCgVmu1/KJyWwdBJ4RXxcw==
+"@technote-space/github-action-helper@^0.7.4":
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/@technote-space/github-action-helper/-/github-action-helper-0.7.4.tgz#6d5f4d75d65f59dd5165ccb31805bafc8c09501e"
+  integrity sha512-daV+bx7l+8Dlm+Iv+7JYac9Y56RmtM4mNpjTVdwitx1PwywSI3PE+fEroxyitzN8hLfbAQK8Imud8552ghUH1A==
   dependencies:
     "@actions/core" "^1.2.1"
     "@actions/github" "^2.0.1"
