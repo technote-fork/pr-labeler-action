@@ -18,7 +18,7 @@ async function run(): Promise<void> {
 		return;
 	}
 
-	await action(logger, new GitHub(getInput('GITHUB_TOKEN') || process.env.GITHUB_TOKEN || ''), context);
+	await action(logger, new GitHub(getInput('GITHUB_TOKEN', {required: true})), context);
 }
 
 run().catch(error => setFailed(error.message));
