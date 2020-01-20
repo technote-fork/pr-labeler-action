@@ -12,7 +12,7 @@ export const action = async(logger: Logger, octokit: GitHub, context: Context): 
 	if (labelsToAdd.length) {
 		await octokit.issues.addLabels({
 			...context.repo,
-			number: getPrNumber(context),
+			'issue_number': getPrNumber(context),
 			labels: labelsToAdd,
 		});
 
