@@ -19,14 +19,15 @@ const octokit       = new GitHub('');
 const getContext    = (branch, number = 1): Context => generateContext({
 	event: 'pull_request',
 	action: 'opened',
-	ref: `heads/${branch}`,
-	sha: 'test-sha',
 	owner: 'hello',
 	repo: 'world',
 }, {
 	payload: {
 		'pull_request': {
 			number,
+			head: {
+				ref: branch,
+			},
 		},
 	},
 });
@@ -72,16 +73,13 @@ describe('action', () => {
 		expect(fn).toBeCalledTimes(1);
 	});
 
-	it('should add labels with unexpected number', async() => {
+	it('should not add labels if not pr', async() => {
 		const fn = jest.fn();
 		nock('https://api.github.com')
 			.get('/repos/hello/world/contents/.github/pr-labeler.yml')
 			.reply(200, getConfigFixture(configRootDir))
-			.post('/repos/hello/world/issues/0/labels', body => {
+			.post('/repos/hello/world/issues/1/labels', () => {
 				fn();
-				expect(body).toMatchObject({
-					labels: ['config-fix'],
-				});
 				return true;
 			})
 			.reply(200);
@@ -89,10 +87,10 @@ describe('action', () => {
 		const context = getContext('fix/test');
 		delete context.payload.pull_request;
 		await action(logger, octokit, context);
-		expect(fn).toBeCalledTimes(1);
+		expect(fn).not.toBeCalled();
 	});
 
-	it('should not add labels', async() => {
+	it('should not add labels if not matched', async() => {
 		const fn = jest.fn();
 		nock('https://api.github.com')
 			.get('/repos/hello/world/contents/.github/pr-labeler.yml')

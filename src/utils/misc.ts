@@ -1,3 +1,4 @@
+import { Context } from '@actions/github/lib/context';
 import matcher from 'matcher';
 
 export const getDefaultConfig = (): ({ [key: string]: string | string[] }) => ({
@@ -11,3 +12,6 @@ export const getLabelsToAdd = (config: object, branchName: string): string[] => 
 		config[key].some(pattern => matcher.isMatch(branchName, pattern)) :
 		matcher.isMatch(branchName, config[key]),
 );
+
+// eslint-disable-next-line no-magic-numbers
+export const getPrNumber = (context: Context): number => context.payload.pull_request?.number ?? 0;
