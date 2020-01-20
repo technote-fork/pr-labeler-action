@@ -16,7 +16,7 @@ const rootDir       = path.resolve(__dirname, '../..');
 const configRootDir = path.resolve(__dirname, '../fixtures');
 const logger        = new Logger();
 const octokit       = new GitHub('');
-const getContext    = (branch, number = 1): Context => generateContext({
+const getContext    = (branch: string): Context => generateContext({
 	event: 'pull_request',
 	action: 'opened',
 	owner: 'hello',
@@ -24,7 +24,7 @@ const getContext    = (branch, number = 1): Context => generateContext({
 }, {
 	payload: {
 		'pull_request': {
-			number,
+			number: 123,
 			head: {
 				ref: branch,
 			},
@@ -41,7 +41,7 @@ describe('action', () => {
 		nock('https://api.github.com')
 			.get('/repos/hello/world/contents/.github/pr-labeler.yml')
 			.reply(200, getConfigFixture(configRootDir))
-			.post('/repos/hello/world/issues/1/labels', body => {
+			.post('/repos/hello/world/issues/123/labels', body => {
 				fn();
 				console.log(body);
 				expect(body).toMatchObject({
@@ -60,7 +60,7 @@ describe('action', () => {
 		nock('https://api.github.com')
 			.get('/repos/hello/world/contents/.github/pr-labeler.yml')
 			.reply(404)
-			.post('/repos/hello/world/issues/1/labels', body => {
+			.post('/repos/hello/world/issues/123/labels', body => {
 				fn();
 				expect(body).toMatchObject({
 					labels: ['fix'],
@@ -78,7 +78,7 @@ describe('action', () => {
 		nock('https://api.github.com')
 			.get('/repos/hello/world/contents/.github/pr-labeler.yml')
 			.reply(200, getConfigFixture(configRootDir))
-			.post('/repos/hello/world/issues/1/labels', () => {
+			.post('/repos/hello/world/issues/123/labels', () => {
 				fn();
 				return true;
 			})
@@ -95,7 +95,7 @@ describe('action', () => {
 		nock('https://api.github.com')
 			.get('/repos/hello/world/contents/.github/pr-labeler.yml')
 			.reply(200, getConfigFixture(configRootDir))
-			.post('/repos/hello/world/issues/1/labels', () => {
+			.post('/repos/hello/world/issues/123/labels', () => {
 				fn();
 				return true;
 			})
