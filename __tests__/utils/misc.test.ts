@@ -1,7 +1,7 @@
 /* eslint-disable no-magic-numbers */
 import { isTargetEvent } from '@technote-space/filter-github-action';
 import { getContext } from '@technote-space/github-action-test-helper';
-import { getDefaultConfig, getLabelsToAdd } from '../../src/utils/misc';
+import { getDefaultConfig, getLabelsToAdd, getPrNumber } from '../../src/utils/misc';
 import { TARGET_EVENTS } from '../../src/constant';
 
 describe('isTargetEvent', () => {
@@ -63,5 +63,26 @@ describe('getLabelsToAdd', () => {
 		expect(labels).toHaveLength(2);
 		expect(labels[0]).toBe('test1');
 		expect(labels[1]).toBe('test3');
+	});
+});
+
+describe('getPrNumber', () => {
+	it('should get pr number', () => {
+		expect(getPrNumber(getContext({
+			payload: {
+				'pull_request': {
+					number: 123,
+				},
+			},
+		}))).toBe(123);
+	});
+
+	it('should not get pr number', () => {
+		expect(getPrNumber(getContext({}))).toBe(0);
+		expect(getPrNumber(getContext({
+			payload: {
+				'pull_request': {},
+			},
+		}))).toBe(0);
 	});
 });
