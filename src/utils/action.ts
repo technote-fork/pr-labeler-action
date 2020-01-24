@@ -21,5 +21,6 @@ export const action = async(logger: Logger, octokit: GitHub, context: Context): 
 	} else {
 		logger.info('There are no labels to add.');
 	}
+
 	logger.endProcess();
 };
