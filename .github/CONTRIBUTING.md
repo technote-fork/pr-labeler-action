@@ -1,7 +1,7 @@
 # Contributing
-[issues]: https://github.com/technote-fork/pr-labeler-action/issues
-[fork]: https://github.com/technote-fork/pr-labeler-action/fork
-[pr]: https://github.com/technote-fork/pr-labeler-action/compare
+[issues]: https://github.com/technote-space/pr-labeler-action/issues
+[fork]: https://github.com/technote-space/pr-labeler-action/fork
+[pr]: https://github.com/technote-space/pr-labeler-action/compare
 [eslint]: https://eslint.org/
 [jest]: https://jestjs.io/
 [code-of-conduct]: CODE_OF_CONDUCT.md
