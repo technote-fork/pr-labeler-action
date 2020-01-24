@@ -1,6 +1,6 @@
 {
   "name": "pr-labeler-action",
-  "version": "3.2.2",
+  "version": "3.2.3",
   "private": true,
   "main": "lib/main.js",
   "scripts": {
@@ -12,8 +12,8 @@
     "update": "ncu -u && yarn install && yarn upgrade && yarn audit"
   },
   "dependencies": {
-    "@actions/core": "^1.2.1",
-    "@actions/github": "^2.0.1",
+    "@actions/core": "^1.2.2",
+    "@actions/github": "^2.1.0",
     "@technote-space/filter-github-action": "^0.1.17",
     "@technote-space/github-action-config-helper": "^0.1.1",
     "@technote-space/github-action-helper": "^0.8.1",

@@ -2,8 +2,8 @@
 import nock from 'nock';
 import path from 'path';
 import { Context } from '@actions/github/lib/context';
-import { Logger } from '@technote-space/github-action-helper';
 import { GitHub } from '@actions/github/lib/github';
+import { Logger } from '@technote-space/github-action-helper';
 import {
 	testEnv,
 	generateContext,
@@ -15,7 +15,7 @@ import { action } from '../../src/utils/action';
 const rootDir       = path.resolve(__dirname, '../..');
 const configRootDir = path.resolve(__dirname, '../fixtures');
 const logger        = new Logger();
-const octokit       = new GitHub('');
+const octokit       = new GitHub('test-token');
 const getContext    = (branch: string): Context => generateContext({
 	event: 'pull_request',
 	action: 'opened',
