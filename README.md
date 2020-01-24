@@ -1,9 +1,9 @@
 # PR Labeler
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
-[![CI Status](https://github.com/technote-fork/pr-labeler-action/workflows/CI/badge.svg)](https://github.com/technote-fork/pr-labeler-action/actions)
-[![codecov](https://codecov.io/gh/technote-fork/pr-labeler-action/branch/master/graph/badge.svg)](https://codecov.io/gh/technote-fork/pr-labeler-action)
-[![CodeFactor](https://www.codefactor.io/repository/github/technote-fork/pr-labeler-action/badge)](https://www.codefactor.io/repository/github/technote-fork/pr-labeler-action)
+[![CI Status](https://github.com/technote-space/pr-labeler-action/workflows/CI/badge.svg)](https://github.com/technote-space/pr-labeler-action/actions)
+[![codecov](https://codecov.io/gh/technote-space/pr-labeler-action/branch/master/graph/badge.svg)](https://codecov.io/gh/technote-space/pr-labeler-action)
+[![CodeFactor](https://www.codefactor.io/repository/github/technote-space/pr-labeler-action/badge)](https://www.codefactor.io/repository/github/technote-space/pr-labeler-action)
 
 A GitHub Action that automatically applies labels to your PRs based on branch name patterns like `feature/*` or `fix/*`.
 Can be used in combination with [Release Drafter](https://github.com/toolmantim/release-drafter) to automatically [categorize pull requests](https://github.com/toolmantim/release-drafter#categorize-pull-requests).
@@ -34,7 +34,7 @@ jobs:
   pr-labeler:
     runs-on: ubuntu-latest
     steps:
-      - uses: technote-fork/pr-labeler-action@v3
+      - uses: technote-space/pr-labeler-action@v3
         with:
           configuration-path: .github/pr-labeler.yml # optional, .github/pr-labeler.yml is the default value
         env:
