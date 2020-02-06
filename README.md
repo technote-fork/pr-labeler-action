@@ -10,7 +10,8 @@ Can be used in combination with [Release Drafter](https://github.com/toolmantim/
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
+<details>
+<summary>Details</summary>
 
 - [Usage](#usage)
 - [Configuration](#configuration)
@@ -18,6 +19,7 @@ Can be used in combination with [Release Drafter](https://github.com/toolmantim/
   - [Default configuration](#default-configuration)
 - [Contributors ✨](#contributors-)
 
+</details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Usage
