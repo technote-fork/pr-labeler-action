@@ -3,14 +3,6 @@
   "version": "3.2.4",
   "private": true,
   "main": "lib/main.js",
-  "scripts": {
-    "build": "tsc",
-    "test": "yarn lint && yarn cover",
-    "lint": "eslint 'src/**/*.ts' '__tests__/**/*.ts'",
-    "lint:fix": "eslint --fix 'src/**/*.ts' '__tests__/**/*.ts'",
-    "cover": "jest --coverage",
-    "update": "ncu -u && yarn install && yarn upgrade && yarn audit"
-  },
   "dependencies": {
     "@actions/core": "^1.2.2",
     "@actions/github": "^2.1.0",
@@ -33,5 +25,13 @@
     "nock": "^11.7.2",
     "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "yarn lint && yarn cover",
+    "lint": "eslint 'src/**/*.ts' '__tests__/**/*.ts' --cache",
+    "lint:fix": "eslint --fix 'src/**/*.ts' '__tests__/**/*.ts'",
+    "cover": "jest --coverage",
+    "update": "ncu -u && yarn install && yarn upgrade && yarn audit"
   }
 }
