@@ -1,37 +1,6 @@
 /* eslint-disable no-magic-numbers */
-import { isTargetEvent } from '@technote-space/filter-github-action';
 import { getContext } from '@technote-space/github-action-test-helper';
 import { getDefaultConfig, getLabelsToAdd, getPrNumber } from '../../src/utils/misc';
-import { TARGET_EVENTS } from '../../src/constant';
-
-describe('isTargetEvent', () => {
-	it('should return true', () => {
-		expect(isTargetEvent(TARGET_EVENTS, getContext({
-			payload: {
-				action: 'opened',
-			},
-			eventName: 'pull_request',
-		}))).toBe(true);
-	});
-
-	it('should return false', () => {
-		expect(isTargetEvent(TARGET_EVENTS, getContext({
-			payload: {
-				action: 'moved',
-			},
-			eventName: 'push',
-		}))).toBeFalsy();
-	});
-
-	it('should return false', () => {
-		expect(isTargetEvent(TARGET_EVENTS, getContext({
-			payload: {
-				action: 'created',
-			},
-			eventName: 'project_card',
-		}))).toBeFalsy();
-	});
-});
 
 describe('getDefaultConfig', () => {
 	it('should return default config', () => {
