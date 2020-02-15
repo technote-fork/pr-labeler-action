@@ -1,6 +1,6 @@
 {
   "name": "pr-labeler-action",
-  "version": "3.2.5",
+  "version": "3.2.6",
   "private": true,
   "files": [
     "lib",
