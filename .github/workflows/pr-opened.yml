@@ -30,5 +30,3 @@ jobs:
     steps:
       - name: PR Labeler
         uses: technote-space/pr-labeler-action@gh-actions
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -40,9 +40,7 @@ jobs:
     steps:
       - uses: technote-space/pr-labeler-action@v3
         with:
-          configuration-path: .github/pr-labeler.yml # optional, .github/pr-labeler.yml is the default value
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CONFIGURATION_PATH: .github/pr-labeler.yml # optional, .github/pr-labeler.yml is the default value
 ```
 
 ## Configuration
