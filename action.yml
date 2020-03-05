@@ -5,7 +5,7 @@ description: 'Automatically labels your PRs based on branch name patterns like f
 author: 'Timon van Spronsen'
 
 inputs:
-  configuration-path:
+  CONFIGURATION_PATH:
     description: 'The path for the label configurations'
     default: '.github/pr-labeler.yml'
     required: true
