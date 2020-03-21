@@ -38,9 +38,10 @@ jobs:
   pr-labeler:
     runs-on: ubuntu-latest
     steps:
-      - uses: technote-space/pr-labeler-action@v3
+      - uses: technote-space/pr-labeler-action@v4
         with:
           CONFIGURATION_PATH: .github/pr-labeler.yml # optional, .github/pr-labeler.yml is the default value
+          REF: master # optional, ${{ github.ref }} is the default value
 ```
 
 ## Configuration
