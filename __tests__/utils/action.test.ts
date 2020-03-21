@@ -37,9 +37,10 @@ describe('action', () => {
 	disableNetConnect(nock);
 
 	it('should add labels', async() => {
-		const fn = jest.fn();
+		process.env.INPUT_REF = 'refs/pull/123/merge';
+		const fn              = jest.fn();
 		nock('https://api.github.com')
-			.get('/repos/hello/world/contents/.github/pr-labeler.yml')
+			.get('/repos/hello/world/contents/.github/pr-labeler.yml?ref=refs%2Fpull%2F123%2Fmerge')
 			.reply(200, getConfigFixture(configRootDir))
 			.post('/repos/hello/world/issues/123/labels', body => {
 				fn();
@@ -56,9 +57,10 @@ describe('action', () => {
 	});
 
 	it('should add default labels', async() => {
-		const fn = jest.fn();
+		process.env.INPUT_REF = 'refs/pull/123/merge';
+		const fn              = jest.fn();
 		nock('https://api.github.com')
-			.get('/repos/hello/world/contents/.github/pr-labeler.yml')
+			.get('/repos/hello/world/contents/.github/pr-labeler.yml?ref=refs%2Fpull%2F123%2Fmerge')
 			.reply(404)
 			.post('/repos/hello/world/issues/123/labels', body => {
 				fn();
@@ -74,9 +76,10 @@ describe('action', () => {
 	});
 
 	it('should not add labels if not pr', async() => {
-		const fn = jest.fn();
+		process.env.INPUT_REF = 'refs/pull/123/merge';
+		const fn              = jest.fn();
 		nock('https://api.github.com')
-			.get('/repos/hello/world/contents/.github/pr-labeler.yml')
+			.get('/repos/hello/world/contents/.github/pr-labeler.yml?ref=refs%2Fpull%2F123%2Fmerge')
 			.reply(200, getConfigFixture(configRootDir))
 			.post('/repos/hello/world/issues/123/labels', () => {
 				fn();
@@ -91,9 +94,10 @@ describe('action', () => {
 	});
 
 	it('should not add labels if not matched', async() => {
-		const fn = jest.fn();
+		process.env.INPUT_REF = 'refs/pull/123/merge';
+		const fn              = jest.fn();
 		nock('https://api.github.com')
-			.get('/repos/hello/world/contents/.github/pr-labeler.yml')
+			.get('/repos/hello/world/contents/.github/pr-labeler.yml?ref=refs%2Fpull%2F123%2Fmerge')
 			.reply(200, getConfigFixture(configRootDir))
 			.post('/repos/hello/world/issues/123/labels', () => {
 				fn();
