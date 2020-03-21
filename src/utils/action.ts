@@ -7,7 +7,7 @@ import { getDefaultConfig, getLabelsToAdd, getPrNumber } from './misc';
 
 export const action = async(logger: Logger, octokit: Octokit, context: Context): Promise<void> => {
 	const configPath  = getInput('CONFIGURATION_PATH', {required: true});
-	const config      = await getConfig(configPath, octokit, context, '') || getDefaultConfig();
+	const config      = await getConfig(configPath, octokit, context, {configPath: ''}) || getDefaultConfig();
 	const labelsToAdd = getLabelsToAdd(config, Utils.getPrBranch(context));
 	if (labelsToAdd.length) {
 		await octokit.issues.addLabels({
