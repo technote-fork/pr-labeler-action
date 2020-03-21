@@ -1,0 +1,27 @@
+name: 'PR Labeler'
+
+description: 'Automatically labels your PRs based on branch name patterns like feature/* or fix/*.'
+
+author: 'Timon van Spronsen'
+
+inputs:
+  GITHUB_TOKEN:
+    description: Secret GitHub API token to use for making API requests.
+    default: ${{ github.token }}
+    required: true
+  CONFIGURATION_PATH:
+    description: 'The path for the label configurations'
+    default: '.github/pr-labeler.yml'
+    required: true
+  REF:
+    description: The name of the commit/branch/tag
+    default: ${{ github.ref }}
+    required: false
+
+branding:
+  icon: 'tag'
+  color: 'white'
+
+runs:
+  using: node12
+  main: lib/main.js
