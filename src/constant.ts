@@ -1,3 +1,3 @@
 export const TARGET_EVENTS = {
-	'pull_request': ['opened', 'reopened'],
+  'pull_request': ['opened', 'reopened'],
 };
