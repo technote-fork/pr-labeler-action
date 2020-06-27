@@ -40,7 +40,7 @@ describe('action', () => {
     process.env.INPUT_REF = 'refs/pull/123/merge';
     const fn              = jest.fn();
     nock('https://api.github.com')
-      .get('/repos/hello/world/contents/.github/pr-labeler.yml?ref=refs%2Fpull%2F123%2Fmerge')
+      .get('/repos/hello/world/contents/' + encodeURIComponent('.github/pr-labeler.yml') + '?ref=' + encodeURIComponent('refs/pull/123/merge'))
       .reply(200, getConfigFixture(configRootDir))
       .post('/repos/hello/world/issues/123/labels', body => {
         fn();
@@ -60,7 +60,7 @@ describe('action', () => {
     process.env.INPUT_REF = 'refs/pull/123/merge';
     const fn              = jest.fn();
     nock('https://api.github.com')
-      .get('/repos/hello/world/contents/.github/pr-labeler.yml?ref=refs%2Fpull%2F123%2Fmerge')
+      .get('/repos/hello/world/contents/' + encodeURIComponent('.github/pr-labeler.yml') + '?ref=' + encodeURIComponent('refs/pull/123/merge'))
       .reply(404)
       .post('/repos/hello/world/issues/123/labels', body => {
         fn();
@@ -79,7 +79,7 @@ describe('action', () => {
     process.env.INPUT_REF = 'refs/pull/123/merge';
     const fn              = jest.fn();
     nock('https://api.github.com')
-      .get('/repos/hello/world/contents/.github/pr-labeler.yml?ref=refs%2Fpull%2F123%2Fmerge')
+      .get('/repos/hello/world/contents/' + encodeURIComponent('.github/pr-labeler.yml') + '?ref=' + encodeURIComponent('refs/pull/123/merge'))
       .reply(200, getConfigFixture(configRootDir))
       .post('/repos/hello/world/issues/123/labels', () => {
         fn();
@@ -97,7 +97,7 @@ describe('action', () => {
     process.env.INPUT_REF = 'refs/pull/123/merge';
     const fn              = jest.fn();
     nock('https://api.github.com')
-      .get('/repos/hello/world/contents/.github/pr-labeler.yml?ref=refs%2Fpull%2F123%2Fmerge')
+      .get('/repos/hello/world/contents/' + encodeURIComponent('.github/pr-labeler.yml') + '?ref=' + encodeURIComponent('refs/pull/123/merge'))
       .reply(200, getConfigFixture(configRootDir))
       .post('/repos/hello/world/issues/123/labels', () => {
         fn();
