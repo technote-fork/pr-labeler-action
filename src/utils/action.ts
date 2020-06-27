@@ -1,5 +1,5 @@
 import {getInput} from '@actions/core' ;
-import {Octokit} from '@octokit/rest';
+import {Octokit} from '@technote-space/github-action-helper/dist/types';
 import {Context} from '@actions/github/lib/context';
 import {getConfig} from '@technote-space/github-action-config-helper';
 import {Utils, Logger} from '@technote-space/github-action-helper';
