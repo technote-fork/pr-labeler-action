@@ -790,13 +790,13 @@
     shell-escape "^0.2.0"
     sprintf-js "^1.1.2"
 
-"@technote-space/github-action-helper@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@technote-space/github-action-helper/-/github-action-helper-3.0.1.tgz#6a42b9b0ebb512661e0a9c7e0937fe35962e52f6"
-  integrity sha512-LQJZ6d5mLbuHt/DeuecY/EpHpmG+WrxwT0YgVmTz+TioAcihVUB0pipvuf9OITx4R4wrfEkrsGdzZzsf3oWNIw==
+"@technote-space/github-action-helper@^3.0.1", "@technote-space/github-action-helper@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@technote-space/github-action-helper/-/github-action-helper-3.0.2.tgz#be81339e7af6f680e342c59b4d12824e40f715d0"
+  integrity sha512-dcqDj1sH2Kw2Wq2QxGl39CCf/R0PyvUgWZv+AwcDi69CeBFMF/2Jq4QAAh1DiX2+ZVV/UqOgkDrOD6okSaI1Rw==
   dependencies:
     "@actions/core" "^1.2.4"
-    "@actions/github" "^3.0.0"
+    "@actions/github" "^4.0.0"
     "@octokit/plugin-rest-endpoint-methods" "^4.0.0"
     shell-escape "^0.2.0"
     sprintf-js "^1.1.2"
