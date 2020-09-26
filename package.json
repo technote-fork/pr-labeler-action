@@ -1,19 +1,28 @@
 {
   "name": "@technote-space/pr-labeler-action",
-  "version": "4.1.9",
+  "version": "4.2.0",
   "private": true,
   "homepage": "https://github.com/technote-space/pr-labeler-action",
+  "bugs": {
+    "url": "https://github.com/technote-space/pr-labeler-action/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/technote-space/pr-labeler-action.git"
-  },
-  "bugs": {
-    "url": "https://github.com/technote-space/pr-labeler-action/issues"
   },
   "files": [
     "lib",
     "action.yml"
   ],
+  "scripts": {
+    "build": "tsc",
+    "cover": "jest --coverage",
+    "lint": "eslint 'src/**/*.ts' '__tests__/**/*.ts' --cache",
+    "lint:fix": "eslint --fix 'src/**/*.ts' '__tests__/**/*.ts'",
+    "release": "yarn release-ga --test",
+    "test": "yarn lint && yarn cover",
+    "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit"
+  },
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
@@ -41,14 +50,5 @@
     "nock": "^13.0.4",
     "ts-jest": "^26.4.0",
     "typescript": "^4.0.3"
-  },
-  "scripts": {
-    "build": "tsc",
-    "test": "yarn lint && yarn cover",
-    "lint": "eslint 'src/**/*.ts' '__tests__/**/*.ts' --cache",
-    "lint:fix": "eslint --fix 'src/**/*.ts' '__tests__/**/*.ts'",
-    "cover": "jest --coverage",
-    "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit",
-    "release": "yarn release-ga --test"
   }
 }
