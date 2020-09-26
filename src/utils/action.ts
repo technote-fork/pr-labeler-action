@@ -2,7 +2,8 @@ import {getInput} from '@actions/core' ;
 import {Octokit} from '@technote-space/github-action-helper/dist/types';
 import {Context} from '@actions/github/lib/context';
 import {getConfig} from '@technote-space/github-action-config-helper';
-import {Utils, Logger} from '@technote-space/github-action-helper';
+import {Utils} from '@technote-space/github-action-helper';
+import {Logger} from '@technote-space/github-action-log-helper';
 import {getDefaultConfig, getLabelsToAdd, getPrNumber} from './misc';
 
 export const action = async(logger: Logger, octokit: Octokit, context: Context): Promise<void> => {
