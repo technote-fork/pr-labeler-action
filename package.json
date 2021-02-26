@@ -21,7 +21,8 @@
     "lint:fix": "eslint --fix 'src/**/*.ts' '__tests__/**/*.ts'",
     "release": "yarn release-ga --test",
     "test": "yarn lint && yarn cover",
-    "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit"
+    "update": "npx npm-check-updates -u && yarn install && yarn upgrade && yarn audit",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@actions/core": "^1.2.6",
