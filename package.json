@@ -22,7 +22,7 @@
     "release": "yarn release-ga --test",
     "test": "yarn lint && yarn cover",
     "update": "npm_config_yes=true npx npm-check-updates -u --timeout 100000 && yarn install && yarn upgrade && yarn audit",
-    "postinstall": "husky install"
+    "postinstall": "[ -n \"$CI\" ] || [ ! -f node_modules/.bin/husky ] || husky install"
   },
   "dependencies": {
     "@actions/core": "^1.2.7",
