@@ -15,7 +15,7 @@ export const action = async(logger: Logger, octokit: Octokit, context: Context):
   }) || getDefaultConfig();
   const labelsToAdd = getLabelsToAdd(config, Utils.getPrBranch(context));
   if (labelsToAdd.length) {
-    await octokit.issues.addLabels({
+    await octokit.rest.issues.addLabels({
       ...context.repo,
       'issue_number': getPrNumber(context),
       labels: labelsToAdd,
