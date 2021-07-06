@@ -28,8 +28,8 @@
     "@actions/core": "^1.4.0",
     "@actions/github": "^5.0.0",
     "@technote-space/filter-github-action": "^0.5.32",
-    "@technote-space/github-action-config-helper": "^2.0.29",
-    "@technote-space/github-action-helper": "^5.2.10",
+    "@technote-space/github-action-config-helper": "^2.0.30",
+    "@technote-space/github-action-helper": "^5.2.11",
     "matcher": "^4.0.0"
   },
   "devDependencies": {
@@ -40,15 +40,15 @@
     "@types/jest": "^26.0.23",
     "@types/js-yaml": "^4.0.1",
     "@types/node": "^16.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.28.1",
-    "@typescript-eslint/parser": "^4.28.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
     "eslint": "^7.30.0",
     "husky": "^7.0.0",
     "jest": "^27.0.6",
     "jest-circus": "^27.0.6",
     "js-yaml": "^4.1.0",
     "lint-staged": "^11.0.0",
-    "nock": "^13.1.0",
+    "nock": "^13.1.1",
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.5"
   }
