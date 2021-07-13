@@ -27,9 +27,9 @@
   "dependencies": {
     "@actions/core": "^1.4.0",
     "@actions/github": "^5.0.0",
-    "@technote-space/filter-github-action": "^0.5.32",
+    "@technote-space/filter-github-action": "^0.5.33",
     "@technote-space/github-action-config-helper": "^2.0.30",
-    "@technote-space/github-action-helper": "^5.2.11",
+    "@technote-space/github-action-helper": "^5.2.12",
     "matcher": "^4.0.0"
   },
   "devDependencies": {
@@ -40,8 +40,8 @@
     "@types/jest": "^26.0.24",
     "@types/js-yaml": "^4.0.2",
     "@types/node": "^16.3.1",
-    "@typescript-eslint/eslint-plugin": "^4.28.2",
-    "@typescript-eslint/parser": "^4.28.2",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
     "eslint": "^7.30.0",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
